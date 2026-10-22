@@ -1,4 +1,14 @@
-# Exercise 15 — Associativity of Multiplication and Different Calculation Paths
+# Exercise 15: Associativity of Multiplication and Different Calculation Paths
+
+## 1. Problem Statement
+
+For $A=\begin{pmatrix}1&2&0\\0&1&1\end{pmatrix}$, $B=\begin{pmatrix}1&0\\2&1\\-1&3\end{pmatrix}$, and $C=\begin{pmatrix}2&1\\0&-1\end{pmatrix}$, compare $(AB)C$ and $A(BC)$ including operation counts.
+
+## 2. Theoretical Background and Concepts
+
+Associativity says $(AB)C=A(BC)$ for compatible matrices. Parenthesization can change the cost: multiplying an $m\times n$ by an $n\times p$ matrix requires $mnp$ scalar multiplications using the standard method.
+
+## 3. Detailed Step-by-Step Solution
 
 $$A=\begin{pmatrix}1&2&0\\0&1&1\end{pmatrix},\quad B=\begin{pmatrix}1&0\\2&1\\-1&3\end{pmatrix},\quad C=\begin{pmatrix}2&1\\0&-1\end{pmatrix}.$$
 
@@ -12,6 +22,6 @@ $$BC=\begin{pmatrix}2&1\\4&1\\-2&-4\end{pmatrix}.$$
 Then
 $$A(BC)=\begin{pmatrix}1&2&0\\0&1&1\end{pmatrix}\begin{pmatrix}2&1\\4&1\\-2&-4\end{pmatrix}=\begin{pmatrix}10&3\\2&-3\end{pmatrix}.$$
 
-**Verification:** Both paths produce the same $2\times2$ matrix. This illustrates associativity: $(AB)C=A(BC)$, even though the intermediate matrices differ.
+## 4. Verification and Consistency Checks
 
-**Operation count:** Counting scalar multiplications by the standard row-by-column method, $AB$ needs $2\cdot3\cdot2=12$ and $(AB)C$ needs $2\cdot2\cdot2=8$, totaling **20**. Computing $BC$ needs $3\cdot2\cdot2=12$ and $A(BC)$ needs $2\cdot3\cdot2=12$, totaling **24**. Thus the first path uses fewer scalar multiplications for these dimensions.
+Both multiplication orders yield $\begin{pmatrix}10&3\\2&-3\end{pmatrix}$. The standard scalar multiplication counts are 20 for $(AB)C$ and 24 for $A(BC)$.
